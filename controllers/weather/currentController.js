@@ -1,6 +1,6 @@
 const fetch = require('cross-fetch')
 
-exports.getCurrentWeatherData = async (req, res) => {
+exports.getCurrentData = async (req, res) => {
   const { latitude, longitude } = req.query
 
   const prefix = 'https://api.open-meteo.com/v1/forecast?'
