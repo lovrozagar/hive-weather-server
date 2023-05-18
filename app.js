@@ -6,10 +6,11 @@ const googleRoutes = require('./routes/googleRoutes')
 const app = express()
 app.use(
   cors({
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
+    origin: [
+      'http://localhost:5000',
+      'https://lovrozagar.github.io/hive-weather-client/',
+    ],
+    credentials: true,
   })
 )
 
