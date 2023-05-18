@@ -9,6 +9,7 @@ app.use(
     origin: [
       'http://localhost:5000',
       'https://hive-weather-client.onrender.com',
+      'https://hive-weather-client.netlify.app',
     ],
     credentials: true,
   })
