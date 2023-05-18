@@ -8,7 +8,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:5000',
-      'https://lovrozagar.github.io/hive-weather-client/',
+      'https://hive-weather-client.onrender.com',
     ],
     credentials: true,
   })
