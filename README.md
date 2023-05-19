@@ -7,7 +7,7 @@ git clone https://github.com/lovrozagar/hive-weather-server.git
 cd hive-weather-server/
 ```
 
-### Install packages - React 18
+### Install packages
 
 ```
 npm install
