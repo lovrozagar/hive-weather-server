@@ -7,7 +7,7 @@ const app = express()
 app.use(
   cors({
     origin: [
-      'http://localhost:5000',
+      'http://localhost:3000',
       'https://hive-weather-client.onrender.com',
       'https://hive-weather-client.netlify.app',
     ],

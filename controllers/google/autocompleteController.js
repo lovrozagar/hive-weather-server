@@ -16,28 +16,26 @@ exports.getSuggestions = async (req, res) => {
 
     const json = await response.json()
 
-    if (json.status === 'OK') {
-      const predictions = json.predictions
-      const suggestions = []
+    const predictions = json.predictions
+    const suggestions = []
 
-      for (const prediction of predictions) {
-        const { place_id } = prediction
-        const placeDetails = await getPlaceDetails(place_id, envKey)
+    for (const prediction of predictions) {
+      const { place_id } = prediction
+      const placeDetails = await getPlaceDetails(place_id, envKey)
 
-        if (placeDetails) {
-          const { city, country, countryCode, lat, lng } = placeDetails
-          suggestions.push({
-            city,
-            country,
-            countryCode,
-            lat,
-            lng,
-          })
-        }
+      if (placeDetails) {
+        const { city, country, countryCode, lat, lng } = placeDetails
+        suggestions.push({
+          city,
+          country,
+          countryCode,
+          lat,
+          lng,
+        })
       }
-
-      res.json({ suggestions })
     }
+
+    res.json({ suggestions })
     //
   } catch (error) {
     res.status(500).json({ error: 'An error occurred' })
